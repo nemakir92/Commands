@@ -1,0 +1,25 @@
+***** Command and process required to enable RDP On GCP for Ubuntu *****
+
+	1. Sudo apt-get update
+	2. Sudo apt-get upgrade -y
+	3. Sudo apt-get install ubuntu-desktop.
+	4. Install nomachine for ubuntu.
+	5. Wget nomachine path.deb (wget https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb)
+	6. Sudo apt install  ./nomachine_ver.deb( nomachine_7.6.2_4_amd64.deb)
+	7. Goto GCP --> VPC --> Firewall
+		a. Create new firewall. Name Nomacine
+		b. Target tags. --> Nomachine
+		c. Source ip rages --> 0.0.0.0/0
+		d. Tcp: 4000
+	8. Edit the ubuntu vm, add: Network tag --> Nomachine.
+	9. Sudo -s
+	10. Set password
+		a. Root : passwd
+		b. New: xxxx
+		c. Confirm new: xxxx.
+	11. Nano /etc/ssh/sshd_config.
+		a. Change password authentication to yes.
+	12. Adduser username and set password.
+	13. Usermod -a -G sudo,adm username(xyz)
+	14. sudo apt install xrdp
+	15. sudo systemctl enable xrdp // This will start RDP service
