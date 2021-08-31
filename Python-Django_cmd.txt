@@ -1,0 +1,17 @@
+# Intsall Virtual environment
+  syntax: pip install --user virtualenv
+
+# Create a Python Virtual environment
+  Syntax: python -m venv ll_env
+
+# Activate Virtual Environment
+  Windows
+  Syntax: Source name xyz\Scripts\activate
+  Ubuntu
+  Syntax: Source xyz/bin/activate
+
+# Deactivate Virtual Environment
+  Syntax: deactivate
+  
+# Install Django
+  Syntax: pip install django
